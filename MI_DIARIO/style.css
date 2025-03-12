@@ -1,0 +1,61 @@
+.eti1{
+    color: blueviolet;
+    text-align: center;
+}
+.eti2{
+    color: rgb(13, 24, 179);
+}
+
+.eti3{
+    color: rgb(79, 120, 255);
+}
+
+.eti4{
+    color: rgb(79, 120, 255);
+}
+
+hr{
+    background-color: rgb(171, 82, 255);
+    height: 2px;
+    border: 0px;
+    margin: 20px;
+}
+
+section{
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin: auto;
+    padding: 20px;
+  width: 60%;
+  border: 2px solid rgba(104, 101, 101, 0.253);
+}
+
+.div1{
+    padding:20px;
+    background-color: rgb(223, 227, 255);
+    margin: 20px;
+    border-radius: 9px;
+    border:2px solid rgb(175, 175, 250);
+}
+
+.div2{
+    padding: 20px;
+    background-color: rgb(255, 236, 236);
+    margin: 20px;
+    border-radius: 10px;
+    border:2px solid rgb(182, 166, 166)
+}
+
+.div3{
+    padding: 20px;
+    background-color: rgb(213, 250, 250);
+    border-radius: 10px;
+    margin: 20px;
+    border:2px solid rgb(146, 231, 231)
+}
+.verde{
+   color: rgb(0, 0, 0);
+}
+a{
+    text-decoration: none;color: rgb(88, 138, 76);
+}
