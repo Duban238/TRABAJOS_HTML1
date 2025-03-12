@@ -1,3 +1,4 @@
+
 /* /* Encabezado */
 .fijo { 
     color: white;
@@ -11,6 +12,8 @@
     position: fixed;
     width: 100%;
     top: 0;
+    padding: 10px;
+
 }
 .Alinear {
     text-align: center;
@@ -39,7 +42,7 @@
     margin: 100px auto; 
     display: block;
 }
-.espacio1 {
+.espacio{
     background-color: white;
     text-align: left;
     padding: 20px;
@@ -47,7 +50,8 @@
 .Titulos {
     color: #ff411d;
     font-size: 60px;
-    padding: 20px;
+    padding: 30px;
+    margin-top: 50px;
 }
 .button1 {
     background-color: #ff411d;
@@ -138,6 +142,9 @@
     padding: 8px;
 }
 
+*{
+    margin: 0px;
+}
 
 
 /* RESPONSIBIDAD */
@@ -145,6 +152,7 @@
     .contenedor_espacio{
         display: grid;
         grid-template-columns: 1fr;
+        text-align: center;
     }
 }
 @media(max-width:500px){
@@ -152,6 +160,7 @@
         display: grid;
         grid-template-columns: 1fr;
     }
+    
 }
 
 @media(max-width:700px){
@@ -161,11 +170,18 @@
 
     }
 }
-@media(max-width:600px){
+@media(max-width:500px){
     .espacio3{
         display: grid;
         grid-template-columns:1fr;
-
     }
 }
 
+@media(max-width:500px){
+    .encabezado{
+        display: grid;
+        grid-template-columns: 1fr;
+        font-size: 10px;
+    }
+    
+}
