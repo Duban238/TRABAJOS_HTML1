@@ -1,100 +1,109 @@
 
-.contenedor{
-    background-color: rgb(230, 230, 255);
-    border-radius: 20px;
-    width: 100%;
-    overflow: hidden;
-}
-.contenedor-dos{
-    background-color: rgb(199, 199, 255);
-    border: 2px solid black;
+
+
+.Contenedor_principal {
+    background-color: blue;
     padding: 20px;
-}
-.contenedor-trabajos{
-   display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    padding: 20px;
-    gap: 20px; 
-   border: 2px solid black;
-    
-}
-
-.card {
-    background-size: cover;         
-    background-position: center;                 
-    color: white;                 
-    border-radius: 30px;    
-    padding: 20px; 
+    display: flex;
+    justify-content: center;
 }
 
 
-.Cuadricula{
-    border: 2px solid black;
-}
-.Botton{
-    text-align: center;
+.Contenedor_trabajos {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 10px; 
+    width: 80%;
+    max-width: 900px;
     border: 2px solid black;
     background-color: white;
-    width: 200px;
-    color: black;
-    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
-.Botton:hover{
-    background-color: rgb(199, 199, 255);
-}
-a{
-    color: black;
-    text-decoration: none;
-}
-.textos{
+
+
+.item {
+    background-color: lightgray;
+    text-align: center;
+    padding: 20px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
     align-items: center;
-    justify-content: space-between;
-    height: 300px;
-    padding: 20px;
-    font-size: 24px;
+}
+.item:hover {
+    transform: scale(1.05); 
 }
 
-hr{
-    background-color:white;
-    height: 3px;
+.img1{
     width: 100%;
-    margin: 10px 0;
+    height: 200px;
 
+    border-radius: 10px;
 }
 
 
-.h1{
-    color: white;
-    text-align: center;
-}
-h3{
-    color: rgb(5, 5, 5);
-    text-align: center;
+a {
+    color: blue;
+    text-decoration: none;
 }
 
-.encabezado2 {
-    background-color:rgb(199, 199, 255);
-    color: white;
-    height: 90px;
-    padding-right: 100px; 
+
+
+.boton{
     border: 2px solid black;
-    padding: 20px;
+    width: 200px;
+    background-color: aliceblue;
+    font-size: 25px;
+
 }
+.boton:hover{
+    background-color: rgb(199, 199, 255);
+}
+
+
 
 /* RESPONSIBIDAD */
-
-@media(max-width:600px){
-    .contenedor-trabajos{
-        display: grid;
+@media screen and (max-width: 600px) {
+    .Contenedor_trabajos {
         grid-template-columns: 1fr;
+        width: 90%; 
     }
-    .card{
-        display: flex;
-        justify-content: center;
-        background-size: cover;         
-        background-position: center; 
+    
+    .img1 {
+        height: 150px;
+    }
+
+    .boton {
+       font-size: 25px;
+        padding: 3px 0;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .Contenedor_principal {
+        padding: 10px;
+    }
+
+    .Contenedor_trabajos {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .item {
+        padding: 15px;
+    }
+
+    .img1 {
+        height: 120px; 
+    }
+
+    .boton {
+        width: 130px;
+        font-size: 25px; 
     }
 }
