@@ -149,8 +149,9 @@ p{
         display: grid;
         grid-template-columns: 1fr;
 }
-
 }
+
+
 @media(max-width:800px){
  .Numero{
     font-size: 30px;
@@ -164,6 +165,11 @@ p{
 }
 
 @media(max-width:500px){
+    h1{
+        font-size: 30px;
+        text-align: center;
+    }
+   
     .Numero{
         font-size: 20px;
     }
@@ -209,6 +215,23 @@ p{
        width: 200px;
     }
 }
+
+
+@media(max-width:350px){
+    .img3{
+        height: 210px;
+    }
+    .img4{
+        height: 300px;
+    }
+    p{
+        font-size: 15px;
+    }
+    .Color_t{
+        font-size: 15px;
+    }
+}
+
 
 
 
