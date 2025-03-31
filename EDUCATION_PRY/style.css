@@ -1,5 +1,4 @@
 
-
 .Contenedor_informacion{
     display: grid;  
     grid-template-columns: 1fr 3fr;
@@ -13,7 +12,7 @@ h1{
     padding: 20px;
 }
 .Numero{
-    margin: 30px; 
+    margin-top: 25px;
     font-size: 25px; 
    
 }
@@ -31,7 +30,7 @@ h1{
 .Img2{
     width: 300px;
     height: 200px;
-   
+    
    
 }
 
@@ -40,11 +39,11 @@ h1{
     display: grid;
     grid-template-columns: 40px auto; 
    
-    gap: 10px; 
+    gap: 30px; 
 }
 .padrei{
-    height: 60px;
-    width: 50px;
+    height: 50px;
+    width: 40px;
     margin: 15px;
 }
 .Idioma_colum {
@@ -128,6 +127,7 @@ p{
 .fecha2{
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 .Fecha3{
     display: flex;
@@ -179,10 +179,10 @@ p{
         height: 190px;
     }
     .Nombre{
-        font-size: 70px;
+        font-size: 58px;
     }
     .Subnombre{
-        font-size: 70px;
+        font-size: 60px;
     }
     .Education{
         font-size: 20px;
@@ -201,9 +201,6 @@ p{
 @media(max-width:450px){
     .img3{
    height: 250px;
-    }
-    .Img1{
-        width:250px;
     }
 }
 
