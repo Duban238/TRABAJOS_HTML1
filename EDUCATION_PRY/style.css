@@ -164,4 +164,46 @@ p{
  }
 }
 
+@media(max-width:500px){
+    .Numero{
+        font-size: 20px;
+    }
+    .padrei{
+        width: 40px;
+        height:40px ;
+    }
+    .Idioma{
+        font-size: 20px;
+    }
+    .img9{
+        height: 190px;
+    }
+    .Nombre{
+        font-size: 70px;
+    }
+    .Subnombre{
+        font-size: 70px;
+    }
+    .Education{
+        font-size: 20px;
+    }
+    p{
+        font-size: 20px;
+    }
+    .Color_t{
+        font-size: 20px;
+    }
+    .img3{
+        height: 200px;
+    }
+}
+
+@media(max-width:450px){
+    .img3{
+   height: 250px;
+    }
+}
+
+
+
 
