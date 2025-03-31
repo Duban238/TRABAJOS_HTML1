@@ -144,14 +144,6 @@ p{
 
 
 /* Responsibidad */
-@media(max-width:700px){
-    .Contenedor_informacion{
-        display: grid;
-        grid-template-columns: 1fr;
-}
-}
-
-
 @media(max-width:800px){
  .Numero{
     font-size: 30px;
@@ -162,6 +154,16 @@ p{
  .img9{
     height: 250px;
  }
+}
+@media(max-width:700px){
+    .Contenedor_informacion{
+        display: grid;
+        grid-template-columns: 1fr;
+}
+h1{
+    text-align: center;
+}
+
 }
 
 @media(max-width:500px){
@@ -217,9 +219,9 @@ p{
 }
 
 
-@media(max-width:350px){
+@media(max-width:380px){
     .img3{
-        height: 210px;
+        height: 170px;
     }
     .img4{
         height: 300px;
@@ -231,3 +233,4 @@ p{
         font-size: 15px;
     }
 }
+
