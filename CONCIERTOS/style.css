@@ -69,3 +69,52 @@ li {
 body {
     background-color: #1D202B;
 }
+
+@media(max-width:1100px){
+    .contenedor{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    h3{
+        font-size: 30px;
+    }
+    .textos{
+        font-size: 30px;
+    }
+    .banner{
+        font-size: 30px;
+    }
+    .boton{
+        font-size: 30px;
+    }
+}
+@media(max-width:1000px){
+    .contenedor-conciertos{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    h3{
+        font-size: 30px;
+    }
+    .textos{
+        font-size: 30px;
+    }
+    .boton{
+        font-size: 30px;
+    }
+}
+@media(max-width:600px){
+    .contenedor-conciertos{
+        display: grid;
+        grid-template-columns: 1fr ;
+    }
+    h3{
+        font-size: 30px;
+    }
+    .textos{
+        font-size: 30px;
+    }
+    .boton{
+        font-size: 30px;
+    }
+}
