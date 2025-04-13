@@ -1,122 +1,505 @@
-.contenedor_general {
-    width: 80%;
-    max-width: 900px;
-    background-color: white;
-    padding: 20px;
-    border: 2px solid black;
-}
-.titulo-portafolio {
-    text-align: center;
-    color: rgb(0, 0, 0);
-   
-    border: 2px solid white;
-   margin: 18px;
-   background-color: #F8F8FF;
-   border-radius: 100px;
-
+* {
+    margin: 0;
+    box-sizing: border-box;
+    
 }
 
-.Contenedor_principal {
-    background-color:  #D0C3FC;
-    padding: 20px;
+/* ENCABEZADO */
+header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(56, 66, 99);
+    color: white;
+    padding: 10px 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+
+.buscador {
+    display: flex;
+    align-items: center;
+    background: rgb(56, 66, 99);
+    border-radius: 20px;
+    width: 180px;
+    border: 1px solid rgb(56, 66, 99);
+}
+
+.buscador i {
+    color: white;
+}
+
+.buscador input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: rgb(56, 66, 99);
+    color: white;
+    font-size: 20px;
+}
+
+
+/* LISTAS */
+
+
+.lista {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.lista p:hover {
+    color: orange;
+}
+
+
+/* CAMISAS */
+.camisas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+   
+}
+
+
+.img1 {
+    width: 300px;
+    height: 300px;
+}
+
+.marca h1{
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.4); 
+    position: absolute;
+   left: 40%;
+    bottom: 10px;
+}
+.marca1 h1 {
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.4); 
+    position: absolute; 
+    left: 35%;
+    bottom: 10px;
+}
+
+.marca p, .marca1 p {
+    color: white;
+    font-size: 20px;  
+    padding-bottom: 30px;
+    
+}
+
+.camisa1 {
+    background-color: #24c5d4;
+    position: relative;
+    
+}
+
+.camisa2 {
+    background-color: #0494cc;
+    position: relative;
+}
+
+/* NUEVE IMAGENES */
+.marcas {
+    display: grid;
+    grid-template-columns: repeat(10, auto); 
+   text-align: center;
+   justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.img2 {
+    width: 100px;
+    height: 100px;
+}
+
+
+/* TRES CAMISAS */
+.camisa_tres {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
     justify-content: center;
 }
 
 
-.Contenedor_trabajos {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 10px; 
-    background-color: white;
-    padding: 20px;
-   
+.img3 {
+    width: 300px;
+    height: 300px;
 }
 
-
-.item {
-    background-color: #F8F8FF;
-    text-align: center;
-    padding: 20px;
+.camisa_uno {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    border-radius: 10px;
-    align-items: center;
-    border: 2px solid black;
-}
-.item:hover {
-    transform: scale(1.05); 
+     align-items: center;
+    background-color: #ea5948;
+    padding-top: 20px;  padding-bottom: 20px;
+    position: relative;
 }
 
-.img1{
-    width: 100%;
-    height: 200px;
+.camisa_dos {
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+    background-color: #fc9464;
+    padding-top: 20px;
+   position: relative;
 
-    border-radius: 10px;
 }
 
-
-a {
-    color: blue;
-    text-decoration: none;
+.camisa_negra {
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+    background-color: #fccc54;
+    padding-top: 20px;
+    position: relative;
 }
 
-
-
-.boton{
-    border: 2px solid black;
-    width: 200px;
-    background-color: aliceblue;
-    font-size: 25px;
-
+.boton {
+    border-radius: 30px;
+    background-color: white;
+    width: 190px;
+    height: 50px;
+   padding-top: 15px;
 }
 .boton:hover{
-    background-color: rgb(199, 199, 255);
-    border-radius: 20px;
+    background-color: rgb(226, 255, 255);
+}
+.img_absoluta{
+    position: absolute;
+    top: 210px;
+    left: 60%;
+}
+.icono_absoluto{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 0;
 }
 
 
+
+/* OCHO PRODUCTOS */
+.procutos_camisas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.procutos_camisas h1{
+     font-weight: 900;
+     text-align: center;
+}
+.procutos_camisas p{
+   font-size: 30px;
+   text-align: center;
+}
+/* IMAGENES */
+
+.ropa_nueva{
+    display: grid;
+    grid-template-columns: repeat(4, auto); 
+    gap: 40px; 
+    text-align: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.ropa_nueva h3{
+  color: #fccc54;
+}
+.estrellas:hover{
+    color: orange;
+}
+.venta{
+    width: 200px;
+    height: 200px;
+}
+.boton1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+ 
+}
+.boton2{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    border: 1px solid black;
+    width: 250px;
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+.boton1 :hover{
+    background-color: #0494cc;
+}
+
+/* CINCO IMAGENES  */
+.cinco_imagenes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    background-color: rgb(238, 238, 238);
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+}
+.cinco_imagenes h1{
+     font-weight: 900;
+     text-align: center;
+}
+.cinco_imagenes p{
+   font-size: 20px;
+   text-align: center;
+}
+.galeria {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+.galeria img {
+    width: 20%;
+ 
+  }
+
+  /* TRES CASILLAS */
+.beneficios{
+    display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: white;
+    text-align: center;
+    font-size: 25px;
+}
+.beneficio{
+    border-right: 1px solid #ddd;
+    padding: 10px;
+}
+.icono {
+    font-size: 30px;
+    color: #e59819; 
+    display: block;
+    margin-bottom: 10px;
+  }
+
+
+  /* PIE DE PAGINA */
+  .footer {
+    background-color: #0b1c23;
+    color: white;
+    padding-top: 30px;
+    font-family: Arial, sans-serif;
+    
+  }
+  
+  .footer-container {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+    
+  }
+  
+.footer-column p{
+    padding-bottom: 7px;
+    font-size: 25px;
+}
+.footer-column p:hover{
+    color: orange;
+}
+.footer-column h3{
+    padding-bottom: 15px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.social-icons {
+    display: flex;
+    padding-top: 30px;
+    gap: 30px;
+    font-size: 25px;
+}
+
+
+input{
+    height: 30px;
+    font-size: 20px;
+}
+button{
+    background-color: orange;
+    color: white;
+    height: 30px;
+    font-size: 20px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 25px;
+    color: #ccc;
+    padding: 20px;
+  }
+.metodo_pago{
+    width: 50px;
+    height: 50px;
+}
 
 /* RESPONSIBIDAD */
-@media  (max-width: 750px) {
-    .Contenedor_trabajos {
-        grid-template-columns: 1fr;
-        width: 90%; 
-    }
-    
-    .img1 {
-        height: 150px;
+@media(max-width:1367px){
+    .marca h1{
+        left: 35%;
+         bottom: 15px;
+  
+     }
+     .marca1 h1 {
+         left: 30%;
+         bottom: 15px;
+     }
+}
+@media(max-width:1100px){ 
+    .marca h1{
+           left: 30%;
+            bottom: 18px;
+     
+        }
+        .marca1 h1 {
+            left: 25%;
+            bottom: 18px;
+        }
+        
     }
 
-    .boton {
-       font-size: 25px;
-        padding: 3px 0;
+    @media(min-width:750px){
+        .galeria {
+            grid-template-columns: repeat(5, 1fr);
+          }
     }
+
+@media(max-width:941px){
+    .marca h1{
+       left: 40%;
+        bottom: 18px;
+        font-size: 45px;
+    }
+    .marca1 h1 {
+        left: 35%;
+        bottom: 18px;
+        font-size: 45px;
+    }
+    .camisa_tres{
+    display: grid;
+    grid-template-columns: 1fr;
+    }
+    .camisa_dos{
+        padding-bottom: 20px;
+    }
+    .camisa_negra{
+        padding-bottom: 20px;
+    }
+    .camisas{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .marcas{
+        display: grid;
+        grid-template-columns: repeat(5, auto); 
+    }
+    .marca p, .marca1 p{
+        font-size: 25px;
+    } 
+    .img_absoluta{
+        left: 55%;
+    }
+    .ropa_nueva{
+        display: grid;
+    grid-template-columns: repeat(2, auto);
+    }
+    .footer-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+   
+}
+@media(max-width:644px){
+    .beneficios{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .footer-container{
+        display: grid;
+        grid-template-columns: 1fr ;
+    
+       
+    }
+    .marcas{
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+    }
+    .footer-column{
+        text-align: center;
+        justify-content: center;
+    }
+    .social-icons {
+        justify-content: center;
+        align-items: center;
+    }
+    .marca h1{
+        left: 35%;
+         bottom: 18px;
+  
+     }
+     .marca1 h1 {
+         left: 30%;
+         bottom: 18px;
+     }
+   
 }
 
-
-@media  (max-width: 500px) {
-    .Contenedor_principal {
-        padding: 10px;
+@media(max-width:500px){
+    .ropa_nueva{
+        display: grid;
+    grid-template-columns: repeat(1, auto);
     }
+    .galeria img {
+        width: 100%;
+     
+      }
+    
+}
 
-    .Contenedor_trabajos {
-        width: 95%;
-        padding: 10px;
-    }
-
-    .item {
-        padding: 15px;
-    }
-
-    .img1 {
-        height: 120px; 
-    }
-
-    .boton {
-        width: 130px;
-        font-size: 25px; 
-    }
+@media(max-width:400px){
+    .marca h1{
+        left: 30%;
+         bottom: 20px;
+         font-size: 35px;
+  
+     }
+     .marca1 h1 {
+         left: 18%;
+         bottom: 20px;
+         font-size: 35px;
+     }
 }
