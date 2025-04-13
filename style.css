@@ -7,17 +7,17 @@
 }
 .titulo-portafolio {
     text-align: center;
-    color: black;
+    color: rgb(0, 0, 0);
    
     border: 2px solid white;
    margin: 18px;
-   background-color: lightgray;
+   background-color: #F8F8FF;
    border-radius: 100px;
 
 }
 
 .Contenedor_principal {
-    background-color: lightgray;
+    background-color:  #D0C3FC;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@
 
 
 .item {
-    background-color: lightgray;
+    background-color: #F8F8FF;
     text-align: center;
     padding: 20px;
     display: flex;
@@ -59,7 +59,7 @@
 
 
 a {
-    color: black;
+    color: blue;
     text-decoration: none;
 }
 
@@ -70,17 +70,17 @@ a {
     width: 200px;
     background-color: aliceblue;
     font-size: 25px;
-    border-radius: 10px;
 
 }
 .boton:hover{
-    background-color: rgb(180, 221, 255);
+    background-color: rgb(199, 199, 255);
+    border-radius: 20px;
 }
 
 
 
 /* RESPONSIBIDAD */
-@media screen and (max-width: 750px) {
+@media  (max-width: 750px) {
     .Contenedor_trabajos {
         grid-template-columns: 1fr;
         width: 90%; 
@@ -97,7 +97,7 @@ a {
 }
 
 
-@media screen and (max-width: 500px) {
+@media  (max-width: 500px) {
     .Contenedor_principal {
         padding: 10px;
     }
