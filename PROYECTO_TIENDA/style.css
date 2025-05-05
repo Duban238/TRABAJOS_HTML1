@@ -80,14 +80,14 @@ header {
     color: rgba(255, 255, 255, 0.4); 
     position: absolute;
    left: 40%;
-    bottom: 10px;
+    bottom: 13px;
 }
 .marca1 h1 {
     font-size: 50px;
     color: rgba(255, 255, 255, 0.4); 
     position: absolute; 
     left: 35%;
-    bottom: 10px;
+    bottom: 13px;
 }
 
 .marca p, .marca1 p {
@@ -384,12 +384,12 @@ button{
 @media(max-width:1100px){ 
     .marca h1{
            left: 30%;
-            bottom: 18px;
+            bottom: 13px;
      
         }
         .marca1 h1 {
-            left: 25%;
-            bottom: 18px;
+            left: 21%;
+            bottom: 13px;
         }
         
     }
@@ -480,6 +480,7 @@ button{
    
 }
 
+
 @media(max-width:500px){
     .ropa_nueva{
         display: grid;
@@ -492,7 +493,7 @@ button{
     
 }
 
-@media(max-width:400px){
+@media(max-width:456px){
     .marca h1{
         left: 30%;
          bottom: 20px;
@@ -500,8 +501,11 @@ button{
   
      }
      .marca1 h1 {
-         left: 22%;
+         left: 25%;
          bottom: 20px;
          font-size: 35px;
+     }
+     .marca p, .marca1 p {
+        font-size: 20px;
      }
 }
