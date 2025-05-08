@@ -520,3 +520,20 @@ button{
         font-size: 20px;
      }
 }
+
+@media(max-width:300px){
+    .marca h1{
+        left: 25%;
+         bottom: 20px;
+         font-size: 35px;
+  
+     }
+     .marca1 h1 {
+         left: 16%;
+         bottom: 20px;
+         font-size: 35px;
+     }
+     .marca p, .marca1 p {
+        font-size: 20px;
+     }
+}
