@@ -147,7 +147,7 @@ p{
 
 
 /* Responsibidad */
-@media(max-width: 960px){
+@media(max-width: 1044px){
     .contenedor_padre{
         padding: 0px;
     }
