@@ -44,6 +44,7 @@ header{
     background: rgb(56, 66, 99);
     color: white;
     font-size: 20px;
+    padding: 15px;
 }
 
 
@@ -54,11 +55,16 @@ header{
     display: flex;
     justify-content: center;
     gap: 20px;
-    font-size: 30px;
+    font-size: 15px;
     font-weight: 700;
     padding-top: 20px;
     padding-bottom: 20px;
     flex-wrap: wrap;
+    font-weight: 700;
+}
+.linea{
+    border-right: 1px solid ;
+    padding-right:20px ;
 }
 
 .lista p:hover {
@@ -94,7 +100,24 @@ header{
     left: 35%;
     bottom: 13px;
 }
-
+.flecha{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    color: white;
+}
+.flecha1{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    color: white;
+}
+.flecha i:hover {
+  color: black; 
+}
+.flecha1 i:hover{
+    color: black;
+}
 .marca p, .marca1 p {
     color: white;
     font-size: 20px;  
@@ -121,6 +144,7 @@ header{
    justify-content: center;
     padding-bottom: 20px;
     padding-top: 20px;
+    gap: 30px;
 }
 
 .img2 {
@@ -207,7 +231,8 @@ header{
      text-align: center;
 }
 .procutos_camisas p{
-   font-size: 30px;
+   font-size: 15px;
+   color: #a8a3a3;
    text-align: center;
 }
 /* IMAGENES */
@@ -218,9 +243,12 @@ header{
     gap: 40px; 
     text-align: center;
     justify-content: center;
-    font-size: 25px;
+    font-size: 21px;
 }
-
+.ropa_nueva p{
+    
+    font-weight: 700;
+}
 .ropa_nueva h3{
   color: #fccc54;
 }
@@ -250,6 +278,8 @@ header{
     height: 50px;
     background-color: black;
     color: white;
+    font-weight: 700;
+    font-size: 15px;
 }
 .boton1 :hover{
     background-color: orange;
@@ -266,12 +296,14 @@ header{
     flex-wrap: wrap;
 }
 .cinco_imagenes h1{
-     font-weight: 900;
+     font-weight: 700;
      text-align: center;
 }
 .cinco_imagenes p{
-   font-size: 20px;
+   font-size: 10px;
    text-align: center;
+   font-weight: 700;
+   color: #a8a3a3;
 }
 .galeria {
     display: flex;
@@ -280,8 +312,8 @@ header{
   }
 .galeria img {
     width: 20%;
- 
   }
+
 
   /* TRES CASILLAS */
 .beneficios{
@@ -291,7 +323,6 @@ header{
     padding-bottom: 40px;
     background-color: white;
     text-align: center;
-    font-size: 25px;
 }
 .beneficio{
     border-right: 1px solid #ddd;
@@ -303,7 +334,13 @@ header{
     display: block;
     margin-bottom: 10px;
   }
-
+.beneficio p{
+    padding-top: 10px;
+    color: #a8a3a3;
+}
+.beneficio h3{
+    font-weight: 900;
+}
 
   /* PIE DE PAGINA */
   .footer {
@@ -324,7 +361,7 @@ header{
   
 .footer-column p{
     padding-bottom: 7px;
-    font-size: 25px;
+    font-size: 15px;
 }
 .footer-column p:hover{
     color: orange;
@@ -342,20 +379,20 @@ header{
     font-size: 25px;
 }
 
-.enter{
-    padding-top: 10px;
-}
 input{
     height: 30px;
-    font-size: 20px;
+    font-size: 15px;
 }
 button{
     background-color: orange;
     color: white;
     height: 30px;
-    font-size: 20px;
+    font-size: 15px;
 }
-
+.bottom{
+    display: flex;
+    gap: 3px;
+}
 
 .footer-bottom {
     border-top: 1px solid #333;
@@ -365,7 +402,7 @@ button{
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 25px;
+    font-size: 15px;
     color: #ccc;
     padding: 20px;
   }
@@ -375,7 +412,8 @@ button{
 }
 
 /* RESPONSIBIDAD */
-@media(max-width:1367px){
+
+@media(max-width:1366px){
     .marca h1{
         left: 35%;
          bottom: 15px;
@@ -385,8 +423,18 @@ button{
          left: 30%;
          bottom: 15px;
      }
+     .ropa_nueva{
+        font-size: 15px;
+     }
+     .boton2{
+        width: 200px;
+        font-size: 13px;
+     }
 }
 @media(max-width:1100px){ 
+    .marcas{
+        gap: 0;
+    }
     .marca h1{
            left: 30%;
             bottom: 13px;
@@ -443,10 +491,14 @@ button{
     .ropa_nueva{
         display: grid;
     grid-template-columns: repeat(2, auto);
+    font-size: 15px;
     }
     .footer-container{
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+    .flecha, .flecha1{
+        display: none;
     }
    
 }
@@ -455,11 +507,15 @@ button{
         display: grid;
         grid-template-columns: 1fr;
     }
+    .beneficio{
+        border-right: none;
+    }
     .footer-container{
         display: grid;
-        grid-template-columns: 1fr ;
-    
-       
+        grid-template-columns: 1fr ; 
+    }
+    .bottom{
+        justify-content: center;
     }
     .marcas{
         display: grid;
@@ -519,6 +575,17 @@ button{
      .marca p, .marca1 p {
         font-size: 20px;
      }
+}
+
+@media(max-width:430px){
+  input{
+    width: 130px;
+    font-size: 13px;
+  }
+button{
+   font-size: 13px;
+   width: 110px;
+}
 }
 
 @media(max-width:300px){
