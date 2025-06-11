@@ -1,0 +1,92 @@
+.til_centrar{
+    text-align: center;
+}
+.select{
+    width: 150px;
+    height: 30px;
+}
+.cuerpo{
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+}
+.boton{
+    background-color: rgb(35, 196, 35);
+    height: 39px;
+    border-radius: 10px;
+    color: white;
+}
+
+
+.hr2{
+    height: 10px;
+    background-color: rgb(35, 196, 35);
+}
+.btn_eliminar{
+    border-radius: 20px;
+    background-color: #FF4D4F;
+    color: white;
+    font-weight: 700;
+    border: white;
+}
+.btn_editar{
+    border-radius: 20px;
+    background-color: #0D6EFD;
+     color: white;
+    font-weight: 700;
+    border: white;
+}
+
+.modal-header{
+     background-color:rgb(35, 196, 35);
+     color: white;
+
+}
+#save{
+    background-color:rgb(35, 196, 35) ;
+    border: white;
+}
+
+.botones{
+display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 20px;
+}
+
+
+#tarjeta {
+  display: flex;
+  gap: 10px;             
+  padding: 10px;
+}
+
+
+#tarjeta .card {
+  width: 300px;                 
+}
+
+.img_an{
+    width: 70px;
+    height: 70px;
+
+}
+
+
+#filtro_estado{
+    width: 200px;
+}
+
+.encabezado2 {
+    background-color: rgb(35, 196, 35);
+    color: white;
+    text-align: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.nombre_img{
+    display: grid;
+    grid-template-columns:1fr auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
