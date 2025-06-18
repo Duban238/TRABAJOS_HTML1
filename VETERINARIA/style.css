@@ -1,92 +1,159 @@
-.til_centrar{
-    text-align: center;
+.til_centrar {
+  text-align: center;
+  background-color: rgb(45, 178, 255);
+  color: white;
+  border-radius: 10px;
 }
-.select{
-    width: 150px;
-    height: 30px;
-}
-.cuerpo{
-    display: grid;
-    grid-template-columns: 1fr 1fr auto;
-}
-.boton{
-    background-color: rgb(35, 196, 35);
-    height: 39px;
-    border-radius: 10px;
-    color: white;
-}
-
-
-.hr2{
-    height: 10px;
-    background-color: rgb(35, 196, 35);
-}
-.btn_eliminar{
-    border-radius: 20px;
-    background-color: #FF4D4F;
-    color: white;
-    font-weight: 700;
-    border: white;
-}
-.btn_editar{
-    border-radius: 20px;
-    background-color: #0D6EFD;
-     color: white;
-    font-weight: 700;
-    border: white;
-}
-
-.modal-header{
-     background-color:rgb(35, 196, 35);
-     color: white;
-
-}
-#save{
-    background-color:rgb(35, 196, 35) ;
-    border: white;
-}
-
-.botones{
-display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 20px;
-}
-
-
-#tarjeta {
+.cuerpo {
   display: flex;
-  gap: 10px;             
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+.boton {
+  background-color: rgb(45, 178, 255);
+  height: 39px;
+  border-radius: 10px;
+  color: white;
+}
+.hr2 {
+  height: 10px;
+  background-color: rgb(45, 178, 255);
+}
+#tarjeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  gap: 10px;
   padding: 10px;
 }
 
-
 #tarjeta .card {
-  width: 300px;                 
+  width: 350px;
 }
 
-.img_an{
-    width: 70px;
-    height: 70px;
+.ancho {
+  height: 84vh;
+  overflow-y:auto;
+  padding: 30px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  border: solid 1px black;
 
 }
-
-
-#filtro_estado{
-    width: 200px;
-}
-
 .encabezado2 {
-    background-color: rgb(35, 196, 35);
-    color: white;
-    text-align: center;
-    align-items: center;
-    font-size: 20px;
+  background-color: rgb(45, 178, 255);
+  color: white;
+  text-align: center;
+  align-items: center;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.footer {
+  padding-top: 20px;
+}
+.select {
+  width: 150px;
+  height: 30px;
+}
+#filtrar_nombre {
+  height: 39px;
+  border-radius: 10px;
+  color: black;
+  border: black;
+  text-align: center;
+}
+.btn_eliminar {
+  border-radius: 20px;
+  background-color: #ff4d4f;
+  color: white;
+  font-weight: 700;
+  border: white;
+  height: 35px;
+}
+.btn_editar {
+  border-radius: 20px;
+  background-color: #0d6efd;
+  color: white;
+  font-weight: 700;
+  border: white; height: 35px;
+}
+.modal-header {
+  background-color: rgb(45, 178, 255);
+  color: white;
+}
+#save {
+  background-color: rgb(255, 10, 10);
+  border: white;
+}
+.botones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.img_an {
+  width: 70px;
+  height: 70px;
+}
+#filtro_estado {
+  width: 200px;
+}
+.nombre_img {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.descripcion{
+   height: 90px;
+   border: 1px solid #f2f2f2;
+  overflow-y: auto;
+  border-radius: 10px;
+  padding: 10px;
+}
+.seleccion{
+  padding-top: 10px;
 }
 
-.nombre_img{
-    display: grid;
-    grid-template-columns:1fr auto;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* RESPONSIBIDAD */
+
+@media(max-width:1200px){
+  #tarjeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
 }
+#tarjeta .card {
+  width: 270px;
+}
+}
+@media(max-width:990px){
+#tarjeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#tarjeta .card {
+  width: 300px;
+}
+}
+@media(max-width:768px){
+#tarjeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#tarjeta .card {
+  width: 260px;
+}
+}
+@media(max-width:500px){
+#tarjeta {
+  display: grid;
+  grid-template-columns: 1fr ;
+}
+#tarjeta .card {
+  width: 300px;
+}
+
+}
+
+
