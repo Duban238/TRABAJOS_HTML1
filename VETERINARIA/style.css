@@ -149,9 +149,10 @@
 #tarjeta {
   display: grid;
   grid-template-columns: 1fr ;
+   justify-items: center;
 }
 #tarjeta .card {
-  width: 300px;
+  width: 270px;
 }
 
 }
