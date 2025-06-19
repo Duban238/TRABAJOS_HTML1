@@ -59,8 +59,8 @@
 #filtrar_nombre {
   height: 39px;
   border-radius: 10px;
+  border: 1px solid black;
   color: black;
-  border: black;
   text-align: center;
 }
 .btn_eliminar {
@@ -136,23 +136,24 @@
   width: 300px;
 }
 }
-@media(max-width:768px){
+@media(max-width:767px){
 #tarjeta {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  justify-items: center;
 }
 #tarjeta .card {
-  width: 260px;
+  width: 300px;
 }
 }
-@media(max-width:500px){
+@media(max-width:400px){
 #tarjeta {
   display: grid;
   grid-template-columns: 1fr ;
-   justify-items: center;
+
 }
 #tarjeta .card {
-  width: 270px;
+  width: 250px;
 }
 
 }
