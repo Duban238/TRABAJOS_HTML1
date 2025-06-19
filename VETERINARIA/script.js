@@ -1,8 +1,11 @@
+const myModalElemet = document.getElementById('exampleModal')
+const MyModal = new bootstrap.Modal(myModalElemet)
+let random = Math.floor(Math.random() * (400 - 1 + 1) + 1);
 let citas = JSON.parse(localStorage.getItem("citas")) || [];
 let validacion = false;
 let op = 0;
 let pos = null;
-let numero_randon = Math.floor(Math.random() * (400 - 1 + 1) + 1)
+
 let img_mascotas = [
   { tipo: "Perro", url: "https://png.pngtree.com/png-clipart/20200727/original/pngtree-dog-sleep-on-bone-logo-icon-png-image_5245162.jpg" },
   { tipo: "Gato", url: "https://images.freeimages.com/image/previews/b36/feline-cartoon-cat-png-icon-5695247.png" },
@@ -12,14 +15,14 @@ let img_mascotas = [
   { tipo: "Oveja", url: "https://cdn-icons-png.flaticon.com/512/3570/3570616.png" },
   { tipo: "Pato", url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVaB1IaIDXYkNG7Wq8mQa6rquhE1lHcunAVw&s" },
   { tipo: "Loro", url: "https://cdn-icons-png.flaticon.com/512/9804/9804364.png" },
-  { tipo: "Caballo", url: "https://w7.pngwing.com/pngs/242/399/png-transparent-white-horse-mongolian-horse-arabian-horse-ferghana-horse-akhal-teke-pony-white-horse-jumping-horse-animals-black-white.png" }
+  { tipo: "Caballo", url: "https://cdn-icons-png.flaticon.com/512/2219/2219021.png" }
 ];
 function guardar() {
   validaciones();
   if (op == 0) {
     if (validacion) {
       let datos = {
-        numero_cita: Math.floor(Math.random() * (400 - 1 + 1) + 1),
+        numero_cita: random,
         nombre_mascota: document.getElementById("nombre_mascota").value,
         nombre_propietario: document.getElementById("nombre_propietario").value,
         numero_telefono: document.getElementById("numero_telefono").value,
@@ -30,41 +33,47 @@ function guardar() {
         estado: "Abierta",
       };
       citas.push(datos);
+      MyModal.hide();
       localStorage.setItem("citas", JSON.stringify(citas))
       Swal.fire({
-  title: "Tu cita fue registrada exitosamente!",
-  icon: "success",
-  draggable: true
-});
-     filter();
+        title: "Tu cita fue registrada exitosamente!",
+        icon: "success",
+        draggable: true
+      });
+      filter();
       limpiar()
     }
   } else if (op == 1) {
-    citas[pos].nombre_mascota = document.getElementById("nombre_mascota").value;
-    citas[pos].nombre_propietario = document.getElementById("nombre_propietario").value;
-    citas[pos].numero_telefono = document.getElementById("numero_telefono").value;
-    citas[pos].fecha = document.getElementById("fecha").value;
-    citas[pos].hora = document.getElementById("hora").value;
-    citas[pos].tipo_mascota = document.getElementById("tipo_mascota").value;
-    citas[pos].descripcion = document.getElementById("descripcion").value;
-    localStorage.setItem("citas", JSON.stringify(citas));
-   filter();
-   Swal.fire({
-  title: "Estas segur@ de editar tu cita",
-  showDenyButton: true,
-  showCancelButton: true,
-  confirmButtonText: "Si",
-  denyButtonText: `No `
-}).then((result) => {
-  if (result.isConfirmed) {
-    Swal.fire("Tu cita fue editada correctamente", "", "success");
-  } else if (result.isDenied) {
-    Swal.fire("No se realizaron cambios en la cita.", "", "info");
-  }
-});
-    limpiar();
-    op = 0;
-    document.getElementById("save").textContent = "Guardar"
+    validaciones();
+    if (validacion) {
+      citas[pos].nombre_mascota = document.getElementById("nombre_mascota").value;
+      citas[pos].nombre_propietario = document.getElementById("nombre_propietario").value;
+      citas[pos].numero_telefono = document.getElementById("numero_telefono").value;
+      citas[pos].fecha = document.getElementById("fecha").value;
+      citas[pos].hora = document.getElementById("hora").value;
+      citas[pos].tipo_mascota = document.getElementById("tipo_mascota").value;
+      citas[pos].descripcion = document.getElementById("descripcion").value;
+      localStorage.setItem("citas", JSON.stringify(citas));
+      filter();
+      MyModal.hide();
+      Swal.fire({
+        title: "Estas segur@ de editar tu cita",
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: "Si",
+        denyButtonText: `No `
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire("Tu cita fue editada correctamente", "", "success");
+        } else if (result.isDenied) {
+          Swal.fire("No se realizaron cambios en la cita.", "", "info");
+        }
+      });
+      limpiar();
+      op = 0;
+      document.getElementById("save").textContent = "Guardar"
+    }
+
   }
 }
 function limpiar() {
@@ -79,9 +88,15 @@ function limpiar() {
 
 
 function mostrar_tarjeta(citas) {
+  citas.sort(function (a, b) {
+    const fecha_a = new Date(`${a.fecha} ${a.hora}`)
+    const fecha_b = new Date(`${b.fecha} ${b.hora}`)
+    return fecha_a - fecha_b
+  })
+
   document.getElementById("tarjeta").innerHTML = "";
   citas.forEach((element, i) => {
-    let mostrar_img = img_mascotas.find(img => img.tipo === element.tipo_mascota)  || { url: 'img/default.jpg' };
+    let mostrar_img = img_mascotas.find(img => img.tipo === element.tipo_mascota) || { url: 'img/default.jpg' };
     document.getElementById("tarjeta").innerHTML += `
    <div class="card mb-3 p-3">
    <div class="nombre_img">
@@ -99,14 +114,19 @@ function mostrar_tarjeta(citas) {
  
    <p><strong>Hora:</strong> ${element.hora}</p>
    <p><strong>Tipo de mascota:</strong> ${element.tipo_mascota}</p>
-   <p><strong>Sintomas:</strong> ${element.descripcion}</p>
+   <div class="text">
+   <p><strong>Descripcion:</strong></p>
+   <div class="descripcion">${element.descripcion}</div>
+   </div>
 
+
+   <div class="seleccion">
  <select  name="Estado"  class="form-select mb-3">
           <option value="Abierta">Abierta</option>
           <option value="Terminada">Terminada</option>
           <option value="Anulada">Anulada</option>
         </select>
-     
+     </div>
 <div class="botones"> 
 <button onclick="editarcita(${i})" id="btn_editar" class="btn_editar" class="btn btn-primary">Editar</button>
    <button onclick="eliminarCita(${i})"  class="btn_eliminar" class="btn btn-primary">Eliminar</button>
@@ -115,37 +135,36 @@ function mostrar_tarjeta(citas) {
    </div>
     `
 
-    document.getElementsByName("Estado").forEach(element => {
-      element.value = citas[i].estado
+    document.getElementsByName("Estado").forEach((element, index) => {
+      element.value = citas[index].estado;
       element.addEventListener("change", () => {
-        citas[i].estado = element.value
+        citas[index].estado = element.value;
         localStorage.setItem("citas", JSON.stringify(citas));
-        filter()
-      })
-
-    })
-
+        filter();
+      });
+    });
   })
 }
 function eliminarCita(i) {
   Swal.fire({
-  title: "Estas segur@ de eliminar tu cita",
-  showDenyButton: true,
-  showCancelButton: true,
-  confirmButtonText: "Si",
-  denyButtonText: `No `
-}).then((result) => {
-  if (result.isConfirmed) {
-    Swal.fire("Tu cita fue eliminada correctamente", "", "success"); 
-    citas.splice(i, 1)
-  localStorage.setItem("citas", JSON.stringify(citas));
-filter();
-  } else if (result.isDenied) {
-    Swal.fire("No se elimino tu cita .", "", "info");
-  }
-});
+    title: "Estas segur@ de eliminar tu cita",
+    showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: "Si",
+    denyButtonText: `No `
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire("Tu cita fue eliminada correctamente", "", "success");
+      citas.splice(i, 1)
+      localStorage.setItem("citas", JSON.stringify(citas));
+      filter();
+    } else if (result.isDenied) {
+      Swal.fire("No se elimino tu cita .", "", "info");
+    }
+  });
 }
 function editarcita(i) {
+
   let cita = citas[i];
   document.getElementById("nombre_mascota").value = cita.nombre_mascota;
   document.getElementById("nombre_propietario").value = cita.nombre_propietario;
@@ -157,39 +176,40 @@ function editarcita(i) {
   document.getElementById("save").textContent = "Editar";
   op = 1;
   pos = i;
-  
+  MyModal.toggle()
 }
 
-function filter(){
-  let filtro=document.getElementById("filtro_estado")
-  function codigo(){
-    if(filtro.value==""){
-      mostrar_tarjeta(citas);
-    }else{
-       mostrar_tarjeta(citas.filter(element=>element.estado==filtro.value));
+function filter() {
+  let filtro = document.getElementById("filtro_estado")
+  function codigo() {
+    if (filtro.value == "") {
+      mostrar_tarjeta(citas)
+    } else {
+      mostrar_tarjeta(citas.filter(element => element.estado == filtro.value));
     }
   }
-  document.getElementById("filtro_estado").addEventListener("input",()=>{
-  codigo()
+  document.getElementById("filtro_estado").addEventListener("input", () => {
+    codigo()
   })
   codigo()
- 
 }
 
-function filtrar_nombre(nombre_mascota){
-     let filtrar= citas.filter(element=>{ element.nombre_mascota.incluede(nombre_mascota) || element.nombre_propietario(nombre_propietario)})
-     console.log(filtrar);
-     
+function filtrar_nombre() {
+  const nombre_filtro = document.getElementById("filtrar_nombre").value
+  if (!nombre_filtro) {
+    mostrar_tarjeta(citas);
+  }
+  let filtrar = citas.filter(element => element.nombre_mascota.includes(nombre_filtro) || element.nombre_propietario.includes(nombre_filtro))
+  mostrar_tarjeta(filtrar)
 }
+document.getElementById("filtrar_nombre").addEventListener("input", () => {
+  filtrar_nombre()
+});
 
-document.getElementById("filtrar_nombre").addEventListener("input",()=>{
-mostrar_tarjeta(filtrar);
-
-
-})
 
 
 function validaciones() {
+  validacion = false;
   let nombre_mascota = document.getElementById("nombre_mascota").value;
   let nombre_propietario = document.getElementById("nombre_propietario").value;
   let numero_telefono = document.getElementById("numero_telefono").value;
@@ -199,8 +219,9 @@ function validaciones() {
   let descripcion = document.getElementById("descripcion").value;
   const fecha_elejida = new Date(fecha);
   const hoy = new Date();
+
   const [h, m] = hora.split(":").map(Number);
-  
+
   if (nombre_mascota == "") {
     Swal.fire({
       icon: "error",
@@ -221,11 +242,11 @@ function validaciones() {
       title: "Error",
       text: "Por favor digita el numero de telefono!",
     });
-  } else if (numero_telefono.length > 10 || numero_telefono.length<1) {
+  } else if (numero_telefono.length <= 9 || numero_telefono.length > 10) {
     Swal.fire({
       icon: "error",
       title: "Error",
-      text: "Por favor dijita un numero de telefono valido!",
+      text: "El numero de telefono debe tener 10 digitos!",
     });
   }
   else if (fecha == "") {
@@ -255,8 +276,13 @@ function validaciones() {
       title: "Nuestra veterinaria trabaja de 8:00Am a 8:00Pm ",
       text: "Por favor digita una hora que este en nuestro rango de trabajo",
     });
+  } else if (tipo_mascota == "") {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Por favor elije el tipo de mascota!",
+    });
   }
-  
   else if (descripcion == "") {
     Swal.fire({
       icon: "error",
@@ -269,7 +295,7 @@ function validaciones() {
       title: "Error",
       text: "Por favor elige la mascota!",
     });
-  } else if (descripcion.length > 40) {
+  } else if (descripcion.length > 400) {
     Swal.fire({
       icon: "error",
       title: "Error",
