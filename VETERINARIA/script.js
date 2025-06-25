@@ -105,17 +105,16 @@ function mostrar_tarjeta(citas) {
   <img class="img_an" src="${mostrar_img.url}">
     
    </div>
-  
-   <p><strong>Numero cita:</strong> ${element.numero_cita}</p>
-   <p><strong>Propietario:</strong> ${element.nombre_propietario}</p>
+ <p><i class="fas fa-hashtag"></i> <strong>Numero cita:</strong> <span class="texto-secundario">${element.numero_cita}</span></p>
+   <p><i class="fas fa-user"></i>  <strong>Propietario:</strong> <span class="texto-secundario">${element.nombre_propietario}</span></p>
 
-<p><strong>Telefono:</strong> ${element.numero_telefono}</p>
-   <p><strong>Fecha:</strong> ${element.fecha}</p>
+<p><i class="fas fa-phone"></i>  <strong>Telefono:</strong><span class="texto-secundario"> ${element.numero_telefono}</span></p>
+   <p><i class="fas fa-calendar-alt"></i>  <strong>Fecha:</strong><span class="texto-secundario"> ${element.fecha}</span></p>
  
-   <p><strong>Hora:</strong> ${element.hora}</p>
-   <p><strong>Tipo de mascota:</strong> ${element.tipo_mascota}</p>
+   <p><i class="fas fa-clock"></i>  <strong>Hora:</strong><span class="texto-secundario"> ${element.hora}</span></p>
+   <p><i class="fas fa-paw"></i>  <strong>Tipo de mascota:</strong><span class="texto-secundario"> ${element.tipo_mascota}</span></p>
    <div class="text">
-   <p><strong>Descripcion:</strong></p>
+   <p><i class="fas fa-sticky-note"></i>  <strong>Descripcion:</strong></p>
    <div class="descripcion">${element.descripcion}</div>
    </div>
 
@@ -219,6 +218,8 @@ function validaciones() {
   let descripcion = document.getElementById("descripcion").value;
   const fecha_elejida = new Date(fecha);
   const hoy = new Date();
+  hoy.setHours(0, 0, 0, 0);
+  fecha_elejida.setHours(0, 0, 0, 0);
 
   const [h, m] = hora.split(":").map(Number);
 
@@ -260,7 +261,7 @@ function validaciones() {
     Swal.fire({
       icon: "error",
       title: "Fecha inválida",
-      text: "No puedes registrar una cita en el pasado.",
+      text: "Debes registrar la cita un dia despues",
     });
   }
   else if (hora == "") {
