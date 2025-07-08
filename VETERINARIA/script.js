@@ -1,6 +1,6 @@
 const myModalElemet = document.getElementById('exampleModal')
 const MyModal = new bootstrap.Modal(myModalElemet)
-let random = Math.floor(Math.random() * (400 - 1 + 1) + 1);
+let random = Date.now()+''+Math.floor(Math.random()*1000);
 let citas = JSON.parse(localStorage.getItem("citas")) || [];
 let validacion = false;
 let op = 0;
@@ -22,7 +22,7 @@ function guardar() {
   if (op == 0) {
     if (validacion) {
       let datos = {
-        numero_cita: random,
+        id: random,
         nombre_mascota: document.getElementById("nombre_mascota").value,
         nombre_propietario: document.getElementById("nombre_propietario").value,
         numero_telefono: document.getElementById("numero_telefono").value,
@@ -105,7 +105,7 @@ function mostrar_tarjeta(citas) {
   <img class="img_an" src="${mostrar_img.url}">
     
    </div>
- <p><i class="fas fa-hashtag"></i> <strong>Numero cita:</strong> <span class="texto-secundario">${element.numero_cita}</span></p>
+ <p><i class="fas fa-hashtag"></i> <strong>Id:</strong> <span class="texto-secundario">${element.id}</span></p>
    <p><i class="fas fa-user"></i>  <strong>Propietario:</strong> <span class="texto-secundario">${element.nombre_propietario}</span></p>
 
 <p><i class="fas fa-phone"></i>  <strong>Telefono:</strong><span class="texto-secundario"> ${element.numero_telefono}</span></p>
