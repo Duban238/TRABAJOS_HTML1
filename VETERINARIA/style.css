@@ -129,10 +129,6 @@
   color: white;
 }
 
-#save {
-  background-color: rgb(255, 10, 10);
-  border: white;
-}
 
 .botones {
   display: grid;
