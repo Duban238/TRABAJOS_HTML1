@@ -90,10 +90,12 @@ function limpiar() {
 document.getElementById("Cerrar").addEventListener("click",()=>{
      limpiar();
      document.getElementById("save").textContent = "Guardar"
+     op=0
 })
 document.getElementById("Cerrar2").addEventListener("click",()=>{
      limpiar();
      document.getElementById("save").textContent = "Guardar"
+     op=0
 })
 
 function mostrar_tarjeta(citas) {
@@ -270,7 +272,7 @@ function validaciones() {
     Swal.fire({
       icon: "error",
       title: "Fecha inválida",
-      text: "Debes registrar la cita un dia despues",
+      text: "La fecha seleccionada ya pasó. Debes elegir una fecha a partir de mañana.",
     });
   }
   else if (hora == "") {
