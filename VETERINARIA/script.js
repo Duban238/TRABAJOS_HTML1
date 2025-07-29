@@ -42,6 +42,7 @@ function guardar() {
       });
       filter();
       limpiar()
+          document.getElementById("save").textContent = "Guardar"
     }
   } else if (op == 1) {
     validaciones();
@@ -71,7 +72,7 @@ function guardar() {
       });
       limpiar();
       op = 0;
-      document.getElementById("save").textContent = "Guardar"
+      document.getElementById("save").textContent = "Editar"
     }
 
   }
@@ -86,6 +87,14 @@ function limpiar() {
   document.getElementById("descripcion").value = "";
 }
 
+document.getElementById("Cerrar").addEventListener("click",()=>{
+     limpiar();
+     document.getElementById("save").textContent = "Guardar"
+})
+document.getElementById("Cerrar2").addEventListener("click",()=>{
+     limpiar();
+     document.getElementById("save").textContent = "Guardar"
+})
 
 function mostrar_tarjeta(citas) {
   citas.sort(function (a, b) {
