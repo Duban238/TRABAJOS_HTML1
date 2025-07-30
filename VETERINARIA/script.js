@@ -57,19 +57,11 @@ function guardar() {
       localStorage.setItem("citas", JSON.stringify(citas));
       filter();
       MyModal.hide();
-      Swal.fire({
-        title: "Estas segur@ de editar tu cita",
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: "Si",
-        denyButtonText: `No `
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire("Tu cita fue editada correctamente", "", "success");
-        } else if (result.isDenied) {
-          Swal.fire("No se realizaron cambios en la cita.", "", "info");
-        }
-      });
+    Swal.fire({
+  title: "Tu cita fue editada correctamente",
+  icon: "success",
+  draggable: true
+});
       limpiar();
       op = 0;
       document.getElementById("save").textContent = "Editar"
